@@ -6,7 +6,6 @@ import { sendChatMessage } from "@/utils/firestore/sendMessgae";
 import { collection } from "firebase/firestore";
 import { motion } from "framer-motion";
 import moment from "moment";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { Button } from "../ui/button";
@@ -19,8 +18,6 @@ export function Chats() {
   const [col, loading] = useCollection(collection(db, "chats"));
   const ref = useRef<any>();
   const chatBoxRef = useRef<any>();
-
-  const params = useSearchParams();
 
   const { ip } = useIP();
 
