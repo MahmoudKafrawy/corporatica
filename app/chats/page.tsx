@@ -1,7 +1,7 @@
 import { Chats } from "@/components/chat/Chats";
 import { Metadata } from "next";
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "Chats",
 };
 export default function Page() {
