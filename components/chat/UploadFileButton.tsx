@@ -27,6 +27,7 @@ export function UploadFileButton() {
     const url = await getDownloadURL(fileRef);
 
     await sendChatMessage({ message: "", img: url, name: name as string, ip: ip });
+    setSelectedFile(undefined);
   };
 
   return (
