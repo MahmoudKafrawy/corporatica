@@ -16,7 +16,7 @@ export async function sendChatMessage({
     message,
     name,
     ip,
-    img,
+    ...(img ? { img } : {}),
     //TODO add timestamp from server
     created: new Date(),
   });

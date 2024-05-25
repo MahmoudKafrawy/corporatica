@@ -7,14 +7,15 @@ import { getDownloadURL, ref as storageRef } from "firebase/storage";
 import { Paperclip } from "lucide-react";
 import { useState } from "react";
 import { useUploadFile } from "react-firebase-hooks/storage";
+import { v4 as uuidv4 } from "uuid";
 import { Button } from "../ui/button";
 
 export function UploadFileButton() {
   const { name } = useChatStore();
   const { ip } = useIP();
 
-  const [uploadFile, uploading, snapshot, error] = useUploadFile();
-  const fileRef = storageRef(storage, "file.jpg");
+  const [uploadFile, uploading] = useUploadFile();
+  const fileRef = storageRef(storage, uuidv4());
   const [selectedFile, setSelectedFile] = useState<File>();
 
   const upload = async () => {

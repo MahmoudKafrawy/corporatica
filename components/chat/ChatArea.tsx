@@ -26,7 +26,6 @@ export function ChatArea() {
           col.docs
             .sort((a, b) => a.data().created.seconds - b.data().created.seconds)
             .map((v, index) => {
-              console.log(v.data());
               return (
                 <motion.div
                   initial={{ opacity: 0, x: "-10px" }}
