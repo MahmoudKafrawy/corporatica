@@ -1,8 +1,15 @@
 "use client";
+import { useIP } from "@/hooks/useIP";
 import { useChatStore } from "@/store/useChatStore";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 export function WelcomeText() {
-  const { name } = useChatStore();
+  const { name, setIp } = useChatStore();
+  const { ip } = useIP();
+
+  useEffect(() => {
+    setIp(ip);
+  }, [ip]);
 
   return (
     <motion.div

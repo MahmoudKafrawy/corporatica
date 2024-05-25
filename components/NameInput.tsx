@@ -22,11 +22,9 @@ export function NameInput() {
           Start chat
           <ChevronRight />
         </Button>
-        <Button variant={"destructive"} onClick={() => setName("")}>
-          Logout
-        </Button>
       </div>
     );
+
   return (
     <form
       onSubmit={(e) => {
